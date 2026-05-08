@@ -1,0 +1,258 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const lastUpdated = "May 8, 2026";
+---
+
+<BaseLayout
+  title="Terms & Conditions — Buestro"
+  description="Terms and conditions for Buestro products and services."
+>
+  <!-- ── Header ── -->
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="wordmark" aria-label="Buestro home">
+        <span class="wordmark-bar" aria-hidden="true"></span>
+        <span class="wordmark-text">buestro</span>
+      </a>
+    </div>
+  </header>
+
+  <!-- ── Main ── -->
+  <main class="main">
+    <div class="container">
+      <p class="last-updated">Last updated: {lastUpdated}</p>
+      <h1 class="page-title">Terms & Conditions</h1>
+      <p class="lead">By purchasing or using any Buestro product you agree to these terms. Please read them carefully.</p>
+
+      <section class="section">
+        <h2>1. Products and licenses</h2>
+        <p>Buestro offers digital products including Astro templates and developer tools in two tiers:</p>
+        <ul>
+          <li><strong>Free tier</strong> — Released under the MIT license. You may use, copy, modify, and distribute free products for personal and commercial projects without restriction.</li>
+          <li><strong>Pro tier</strong> — A commercial license is granted upon purchase. You may use the product in unlimited personal and client projects. You may not resell, sublicense, or redistribute the source code as a standalone product or template.</li>
+        </ul>
+      </section>
+
+      <section class="section">
+        <h2>2. Payments and refunds</h2>
+        <p>All payments are processed securely by <a href="https://www.lemonsqueezy.com" target="_blank" rel="noopener noreferrer">Lemon Squeezy</a>, who acts as the Merchant of Record. Sales tax and VAT are handled automatically based on your location.</p>
+        <p>Due to the digital nature of our products, all sales are final. Refunds are not offered once a product has been downloaded or accessed. If you experience a technical issue with your purchase, contact us at <a href="mailto:support@buestro.com">support@buestro.com</a> and we will do our best to resolve it.</p>
+      </section>
+
+      <section class="section">
+        <h2>3. Acceptable use</h2>
+        <p>You may not use Buestro products to create anything unlawful, harmful, or in violation of third-party rights. Free and Pro products may not be resold or redistributed as templates, starter kits, or similar products.</p>
+      </section>
+
+      <section class="section">
+        <h2>4. Intellectual property</h2>
+        <p>All Buestro brand assets — including the logo, wordmark, and visual identity — remain the exclusive property of Buestro. The MIT license applies only to the template source code, not to the brand assets.</p>
+      </section>
+
+      <section class="section">
+        <h2>5. Disclaimer of warranties</h2>
+        <p>Buestro products are provided "as is" without warranty of any kind. We do not guarantee that products will be error-free or suitable for every use case. Use them at your own risk.</p>
+      </section>
+
+      <section class="section">
+        <h2>6. Limitation of liability</h2>
+        <p>To the maximum extent permitted by law, Buestro shall not be liable for any indirect, incidental, or consequential damages arising from the use or inability to use our products.</p>
+      </section>
+
+      <section class="section">
+        <h2>7. Changes to these terms</h2>
+        <p>We may update these terms from time to time. Continued use of our products after changes are posted constitutes acceptance of the updated terms.</p>
+      </section>
+
+      <section class="section">
+        <h2>8. Contact</h2>
+        <p>Questions about these terms? Reach us at <a href="mailto:hello@buestro.com">hello@buestro.com</a>.</p>
+      </section>
+    </div>
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="footer-brand">
+        <span class="footer-bar" aria-hidden="true"></span>
+        buestro
+      </span>
+      <nav class="footer-links" aria-label="Footer links">
+        <a href="https://x.com/buestro" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+        <a href="https://github.com/buestro" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:hello@buestro.com">hello@buestro.com</a>
+      </nav>
+      <p class="footer-copy">&copy; {new Date().getFullYear()} Buestro. All rights reserved.</p>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .container {
+    width: 100%;
+    max-width: 680px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+  }
+
+  /* ── Header ── */
+  .site-header {
+    padding-block: 1.5rem;
+    border-bottom: 1px solid var(--border-default);
+  }
+
+  .wordmark {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+  }
+
+  .wordmark-bar {
+    display: block;
+    width: 4px;
+    height: 22px;
+    background: var(--accent);
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+
+  .wordmark-text {
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.02em;
+  }
+
+  /* ── Content ── */
+  .main {
+    flex: 1;
+    padding-block: 4rem;
+  }
+
+  .last-updated {
+    margin: 0 0 0.5rem;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+  }
+
+  .page-title {
+    margin: 0 0 1rem;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+
+  .lead {
+    margin: 0 0 3rem;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-default);
+  }
+
+  .section {
+    margin-bottom: 2.5rem;
+  }
+
+  .section h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .section p {
+    margin: 0 0 0.75rem;
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .section ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .section li {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+  }
+
+  .section a {
+    color: var(--accent);
+    text-decoration: none;
+  }
+
+  .section a:hover {
+    text-decoration: underline;
+  }
+
+  /* ── Footer ── */
+  .site-footer {
+    padding-block: 2rem;
+    border-top: 1px solid var(--border-default);
+  }
+
+  .footer-inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .footer-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--text-primary);
+  }
+
+  .footer-bar {
+    display: block;
+    width: 3px;
+    height: 16px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+
+  .footer-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+
+  .footer-links a {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.15s;
+  }
+
+  .footer-links a:hover {
+    color: var(--text-primary);
+  }
+
+  .footer-copy {
+    width: 100%;
+    margin: 0;
+    font-size: 0.8125rem;
+    color: var(--text-muted);
+  }
+</style>
