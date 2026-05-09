@@ -2,8 +2,11 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout>
-  <!-- Site header -->
+<BaseLayout
+  title="Card — Buestro"
+  description="A beautiful, themeable personal profile page. Edit one config file, deploy anywhere."
+>
+  <!-- Header -->
   <header class="site-header">
     <div class="container">
       <a href="/" class="wordmark" aria-label="Buestro home">
@@ -15,55 +18,46 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
   <!-- Main -->
   <main class="main">
-    <div class="container hero">
-      <!-- Badge -->
+    <div class="container">
       <p class="badge">
         <span class="badge-dot" aria-hidden="true"></span>
-        Coming soon
+        Free — available now
+      </p>
+      <h1 class="page-title">Card</h1>
+      <p class="lead">
+        A beautiful, themeable personal profile page. Edit one config file,
+        deploy anywhere. No HTML, no CSS required.
       </p>
 
-      <!-- Headline -->
-      <h1 class="headline">
-        Production-grade Astro templates<br class="break" />
-        for builders.
-      </h1>
-
-      <!-- Subheadline -->
-      <p class="subheadline">
-        Ship faster with premium Astro templates built for speed, quality, and
-        real-world use. No bloat. Just code that works.
-      </p>
-
-      <!-- Email capture -->
-      <form
-        class="capture-form"
-        action={`https://app.kit.com/forms/9413743/subscriptions`}
-        method="post"
-        target="_blank"
-      >
-        <label for="email" class="sr-only">Email address</label>
-        <input
-          id="email"
-          type="email"
-          name="email_address"
-          placeholder="you@example.com"
-          required
-          autocomplete="email"
-          class="email-input"
-        />
-        <button type="submit" class="submit-btn"> Join the waitlist </button>
-      </form>
-
-      <p class="privacy-note">No spam. Unsubscribe at any time.</p>
-
-      <!-- Products preview -->
-      <div class="products-row">
-        <div class="product-chip">
-          <span class="chip-dot" aria-hidden="true"></span>
-          Card — free personal profile page
-        </div>
-        <div class="product-chip chip-muted">Launchpad — coming Q3 2026</div>
+      <div class="actions">
+        <a
+          href="https://card.buestro.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-primary"
+        >
+          View live demo
+        </a>
+        <a
+          href="https://github.com/buestro/card"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-secondary"
+        >
+          GitHub
+        </a>
       </div>
+
+      <ul class="features">
+        <li>
+          Edit a single <code>profile.config.ts</code> — no HTML or CSS required
+        </li>
+        <li>Carbon Mint theme with automatic dark / light mode</li>
+        <li>12 social platform icons built in</li>
+        <li>Zero client-side JavaScript</li>
+        <li>Deploys in minutes to Vercel, Netlify, or Cloudflare Pages</li>
+        <li>MIT licensed — free for personal and commercial use</li>
+      </ul>
     </div>
   </main>
 
@@ -75,8 +69,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         buestro
       </span>
       <nav class="footer-links" aria-label="Footer links">
-        <a href="/card">Card</a>
-        <a href="/blog">Blog</a>
         <a
           href="https://x.com/buestrodev"
           target="_blank"
@@ -98,7 +90,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style>
-  /* ── Layout ── */
   .container {
     width: 100%;
     max-width: 680px;
@@ -136,22 +127,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     letter-spacing: -0.02em;
   }
 
-  /* ── Hero ── */
+  /* ── Content ── */
   .main {
     flex: 1;
-    display: flex;
-    align-items: center;
-    padding-block: 6rem 4rem;
+    padding-block: 4rem;
   }
 
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-  }
-
-  /* Badge */
   .badge {
     display: inline-flex;
     align-items: center;
@@ -163,7 +144,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     border: 1px solid var(--accent-muted);
     border-radius: var(--radius-pill);
     padding: 0.25rem 0.75rem;
-    margin: 0 0 1.75rem;
+    margin: 0 0 1.5rem;
   }
 
   .badge-dot {
@@ -172,135 +153,104 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     height: 6px;
     border-radius: 50%;
     background: var(--accent);
-    animation: pulse 2s ease-in-out infinite;
   }
 
-  @keyframes pulse {
-    0%,
-    100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.4;
-    }
-  }
-
-  /* Headline */
-  .headline {
-    margin: 0 0 1.25rem;
-    font-size: clamp(2rem, 5vw, 2.75rem);
+  .page-title {
+    margin: 0 0 1rem;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
     font-weight: 700;
-    line-height: 1.15;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.02em;
     color: var(--text-primary);
   }
 
-  .break {
-    display: none;
-  }
-  @media (min-width: 540px) {
-    .break {
-      display: block;
-    }
-  }
-
-  /* Subheadline */
-  .subheadline {
+  .lead {
     margin: 0 0 2rem;
     font-size: 1.0625rem;
     line-height: 1.65;
     color: var(--text-secondary);
-    max-width: 520px;
   }
 
-  /* Form */
-  .capture-form {
+  .actions {
     display: flex;
-    gap: 0.5rem;
-    width: 100%;
-    max-width: 480px;
+    gap: 0.75rem;
     flex-wrap: wrap;
+    margin-bottom: 3rem;
   }
 
-  .email-input {
-    flex: 1;
-    min-width: 0;
-    padding: 0.625rem 0.875rem;
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.625rem 1.25rem;
     font-size: 0.9375rem;
-    font-family: inherit;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .btn-primary:hover {
+    background: var(--accent-hover);
+  }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
     color: var(--text-primary);
     background: var(--bg-surface);
     border: 1px solid var(--border-default);
     border-radius: var(--radius-md);
-    outline: none;
+    text-decoration: none;
     transition: border-color 0.15s;
   }
 
-  .email-input::placeholder {
-    color: var(--text-muted);
-  }
-
-  .email-input:focus {
+  .btn-secondary:hover {
     border-color: var(--accent);
-    box-shadow: 0 0 0 3px var(--accent-subtle);
   }
 
-  .submit-btn {
-    padding: 0.625rem 1.25rem;
-    font-size: 0.9375rem;
-    font-family: inherit;
-    font-weight: 600;
-    color: #ffffff;
-    background: var(--accent);
-    border: none;
-    border-radius: var(--radius-md);
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background 0.15s;
-  }
-
-  .submit-btn:hover {
-    background: var(--accent-hover);
-  }
-
-  /* Privacy note */
-  .privacy-note {
-    margin: 0.75rem 0 2.5rem;
-    font-size: 0.8125rem;
-    color: var(--text-muted);
-  }
-
-  /* Products row */
-  .products-row {
+  .features {
+    margin: 0;
+    padding: 0;
+    list-style: none;
     display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--border-default);
   }
 
-  .product-chip {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.375rem;
-    font-size: 0.8125rem;
-    font-weight: 500;
+  .features li {
+    padding-block: 0.875rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
     color: var(--text-secondary);
-    background: var(--bg-surface);
-    border: 1px solid var(--border-default);
-    border-radius: var(--radius-pill);
-    padding: 0.25rem 0.75rem;
+    border-bottom: 1px solid var(--border-default);
+    padding-left: 1.25rem;
+    position: relative;
   }
 
-  .chip-dot {
-    display: block;
-    width: 6px;
-    height: 6px;
+  .features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
     border-radius: 50%;
     background: var(--accent);
-    flex-shrink: 0;
   }
 
-  .chip-muted {
-    color: var(--text-muted);
+  .features code {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.875em;
+    background: var(--accent-subtle);
+    color: var(--accent);
+    padding: 0.125rem 0.375rem;
+    border-radius: 4px;
   }
 
   /* ── Footer ── */
