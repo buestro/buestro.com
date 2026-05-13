@@ -50,12 +50,35 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
       <ul class="features">
         <li>Edit a single <code>profile.config.ts</code> — no HTML or CSS required</li>
-        <li>Carbon Mint theme with automatic dark / light mode</li>
+        <li>Dark Mint theme with automatic dark / light mode</li>
         <li>12 social platform icons built in</li>
         <li>Zero client-side JavaScript</li>
         <li>Deploys in minutes to Vercel, Netlify, or Cloudflare Pages</li>
         <li>MIT licensed — free for personal and commercial use</li>
       </ul>
+
+      <!-- ── Pro upgrade ── -->
+      <div class="pro-section">
+        <div class="pro-header">
+          <h2 class="pro-title">Card Pro</h2>
+          <span class="pro-price">$9 <span class="pro-price-note">one-time</span></span>
+        </div>
+        <ul class="pro-features">
+          <li>5 additional premium themes</li>
+          <li>QR code for your card</li>
+          <li>vCard download (.vcf)</li>
+          <li>Persistent dark / light mode toggle</li>
+          <li>Dynamic OG images</li>
+        </ul>
+        <a
+          href="https://buestro.lemonsqueezy.com/checkout/buy/38767ee1-805a-4e1c-a2c7-7245ee215418"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-pro"
+        >
+          Buy Pro — $9
+        </a>
+      </div>
     </div>
   </main>
 
@@ -239,6 +262,93 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     color: var(--accent-text);
     padding: 0.125rem 0.375rem;
     border-radius: 4px;
+  }
+
+  /* ── Pro section ── */
+  .pro-section {
+    margin-top: 3rem;
+    padding: 1.75rem;
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    background: var(--bg-surface);
+  }
+
+  .pro-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .pro-title {
+    margin: 0;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+  }
+
+  .pro-price {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    white-space: nowrap;
+  }
+
+  .pro-price-note {
+    font-size: 0.8125rem;
+    font-weight: 400;
+    color: var(--text-muted);
+  }
+
+  .pro-features {
+    margin: 0 0 1.5rem;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--border-default);
+  }
+
+  .pro-features li {
+    padding-block: 0.75rem;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    border-bottom: 1px solid var(--border-default);
+    padding-left: 1.25rem;
+    position: relative;
+  }
+
+  .pro-features li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 4px;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+
+  .btn-pro {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+
+  .btn-pro:hover {
+    background: var(--accent-hover);
   }
 
   /* ── Footer ── */
