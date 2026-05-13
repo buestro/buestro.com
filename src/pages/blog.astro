@@ -6,7 +6,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
   title="Blog — Buestro"
   description="Articles on Astro, performance, and building developer tools. Coming soon."
 >
-  <!-- Header -->
+  <!-- ── Header ── -->
   <header class="site-header">
     <div class="container">
       <a href="/" class="wordmark" aria-label="Buestro home">
@@ -16,23 +16,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </header>
 
-  <!-- Main -->
+  <!-- ── Main ── -->
   <main class="main">
     <div class="container">
       <p class="badge">Coming soon</p>
       <h1 class="page-title">Blog</h1>
       <p class="lead">
         Articles on Astro, web performance, and building developer tools.
-        Nothing here yet — follow <a
-          href="https://x.com/buestrodev"
-          target="_blank"
-          rel="noopener noreferrer">@buestrodev</a
-        > for updates.
+        Nothing here yet — follow <a href="https://x.com/buestrodev" target="_blank" rel="noopener noreferrer">@buestrodev</a> for updates.
       </p>
     </div>
   </main>
 
-  <!-- Footer -->
+  <!-- ── Footer ── -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <span class="footer-brand">
@@ -40,22 +36,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         buestro
       </span>
       <nav class="footer-links" aria-label="Footer links">
-        <a
-          href="https://x.com/buestrodev"
-          target="_blank"
-          rel="noopener noreferrer">X / Twitter</a
-        >
-        <a
-          href="https://github.com/buestro"
-          target="_blank"
-          rel="noopener noreferrer">GitHub</a
-        >
+        <a href="https://x.com/buestrodev" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+        <a href="https://github.com/buestro" target="_blank" rel="noopener noreferrer">GitHub</a>
         <a href="mailto:hello@buestro.com">hello@buestro.com</a>
         <a href="/terms">Terms</a>
       </nav>
-      <p class="footer-copy">
-        &copy; {new Date().getFullYear()} Buestro. All rights reserved.
-      </p>
+      <p class="footer-copy">&copy; {new Date().getFullYear()} Buestro. All rights reserved.</p>
     </div>
   </footer>
 </BaseLayout>

@@ -1,10 +1,61 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+const CHECKOUT_URL =
+  "https://buestro.lemonsqueezy.com/checkout/buy/38767ee1-805a-4e1c-a2c7-7245ee215418";
+
+const freeFeatures = [
+  "Edit a single <code>profile.config.ts</code> — no HTML or CSS required",
+  "Dark Mint theme with automatic dark / light mode",
+  "12 social platform icons built in",
+  "Optimized for Performance, Accessibility, and SEO",
+  "Zero client-side JavaScript",
+  "Deploys in minutes to Vercel, Netlify, or Cloudflare Pages",
+  "MIT licensed — free for personal and commercial use",
+];
+
+const proFeatures = [
+  "Everything in Free",
+  "5 additional premium themes",
+  "QR code for your card",
+  "vCard download (.vcf)",
+  "Persistent dark / light mode toggle",
+  "Dynamic OG images",
+  "Priority support",
+];
+
+const faqs = [
+  {
+    q: "Is Card really free?",
+    a: "Yes. The free version is MIT licensed — use it for personal or commercial projects at no cost, forever.",
+  },
+  {
+    q: "Do I need to know how to code?",
+    a: "Minimal coding required. You edit a single TypeScript config file — it reads like a form. No HTML or CSS knowledge needed.",
+  },
+  {
+    q: "Where do I host it?",
+    a: "Card deploys to Vercel, Netlify, or Cloudflare Pages in minutes. All three have generous free tiers, so hosting costs nothing for most users.",
+  },
+  {
+    q: "Can I use a custom domain?",
+    a: "Yes. All three hosting platforms support custom domains. Point your DNS and you're live at your own URL.",
+  },
+  {
+    q: "How does Pro delivery work?",
+    a: "After purchase you receive an email with a link to the private Pro repository. One-time payment, lifetime access, all future updates included.",
+  },
+  {
+    q: "Can I use Card for a business or client?",
+    a: "The MIT license allows any use — personal, commercial, client work. Pro is per-developer, not per-site.",
+  },
+];
 ---
 
 <BaseLayout
   title="Card — Buestro"
-  description="A beautiful, themeable personal profile page. Edit one config file, deploy anywhere."
+  description="A beautiful, themeable personal profile page. Edit one config file, deploy anywhere. Free and open source."
+  ogImage="/card-screenshot.png"
 >
   <!-- ── Header ── -->
   <header class="site-header">
@@ -16,71 +67,271 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
   </header>
 
-  <!-- ── Main ── -->
-  <main class="main">
+  <!-- ── Hero ── -->
+  <section class="hero-section">
     <div class="container">
-      <p class="badge">
-        <span class="badge-dot" aria-hidden="true"></span>
-        Free — available now
-      </p>
-      <h1 class="page-title">Card</h1>
-      <p class="lead">
-        A beautiful, themeable personal profile page. Edit one config file, deploy anywhere.
-        No HTML, no CSS required.
-      </p>
-
-      <div class="actions">
-        <a
-          href="https://card.buestro.com"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-primary"
-        >
-          View live demo
-        </a>
-        <a
-          href="https://github.com/buestro/card"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-secondary"
-        >
-          GitHub
-        </a>
+      <div class="hero-content">
+        <p class="badge">
+          <span class="badge-dot" aria-hidden="true"></span>
+          Free — available now
+        </p>
+        <h1 class="hero-title">
+          Your personal card,<br class="break" />
+          one config file away.
+        </h1>
+        <p class="hero-lead">
+          A beautiful, themeable profile page built with Astro. Edit a single
+          config file, deploy anywhere — no HTML or CSS required.
+        </p>
+        <div class="hero-actions">
+          <a
+            href="https://card.buestro.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary"
+          >
+            View live demo
+          </a>
+          <a
+            href={CHECKOUT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-secondary"
+          >
+            Buy Pro — $9
+          </a>
+        </div>
       </div>
 
-      <ul class="features">
-        <li>Edit a single <code>profile.config.ts</code> — no HTML or CSS required</li>
-        <li>Dark Mint theme with automatic dark / light mode</li>
-        <li>12 social platform icons built in</li>
-        <li>Zero client-side JavaScript</li>
-        <li>Deploys in minutes to Vercel, Netlify, or Cloudflare Pages</li>
-        <li>MIT licensed — free for personal and commercial use</li>
-      </ul>
-
-      <!-- ── Pro upgrade ── -->
-      <div class="pro-section">
-        <div class="pro-header">
-          <h2 class="pro-title">Card Pro</h2>
-          <span class="pro-price">$9 <span class="pro-price-note">one-time</span></span>
+      <div class="hero-screenshot">
+        <div class="screenshot-frame">
+          <img
+            src="/card-screenshot.png"
+            alt="Buestro Card — personal profile page screenshot"
+            width="480"
+            height="320"
+            loading="eager"
+            decoding="async"
+          />
         </div>
-        <ul class="pro-features">
-          <li>5 additional premium themes</li>
-          <li>QR code for your card</li>
-          <li>vCard download (.vcf)</li>
-          <li>Persistent dark / light mode toggle</li>
-          <li>Dynamic OG images</li>
-        </ul>
-        <a
-          href="https://buestro.lemonsqueezy.com/checkout/buy/38767ee1-805a-4e1c-a2c7-7245ee215418"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="btn-pro"
-        >
-          Buy Pro — $9
-        </a>
       </div>
     </div>
-  </main>
+  </section>
+
+  <!-- ── Themes ── -->
+  <section class="section themes-section">
+    <div class="container">
+      <h2 class="section-title">Beautiful out of the box</h2>
+      <p class="section-lead">
+        Every theme ships with a hand-tuned dark and light variant. No design
+        skills needed.
+      </p>
+
+      <div class="themes-grid">
+        <!-- Dark Mint — Free -->
+        <div class="theme-card theme-free">
+          <div class="theme-preview mint">
+            <div class="preview-bar"></div>
+            <div class="preview-avatar"></div>
+            <div class="preview-name"></div>
+            <div class="preview-handle"></div>
+            <div class="preview-tags">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="preview-links">
+              <span></span><span></span>
+            </div>
+          </div>
+          <div class="theme-info">
+            <span class="theme-name">Dark Mint</span>
+            <span class="theme-badge free">Free</span>
+          </div>
+        </div>
+
+        <!-- Obsidian — Pro -->
+        <div class="theme-card theme-pro">
+          <div class="theme-preview obsidian">
+            <div class="preview-bar"></div>
+            <div class="preview-avatar"></div>
+            <div class="preview-name"></div>
+            <div class="preview-handle"></div>
+            <div class="preview-tags">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="preview-links">
+              <span></span><span></span>
+            </div>
+            <div class="theme-lock" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="theme-info">
+            <span class="theme-name">Obsidian</span>
+            <span class="theme-badge pro">Pro</span>
+          </div>
+        </div>
+
+        <!-- Aurora — Pro -->
+        <div class="theme-card theme-pro">
+          <div class="theme-preview aurora">
+            <div class="preview-bar"></div>
+            <div class="preview-avatar"></div>
+            <div class="preview-name"></div>
+            <div class="preview-handle"></div>
+            <div class="preview-tags">
+              <span></span><span></span><span></span>
+            </div>
+            <div class="preview-links">
+              <span></span><span></span>
+            </div>
+            <div class="theme-lock" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+              </svg>
+            </div>
+          </div>
+          <div class="theme-info">
+            <span class="theme-name">Aurora</span>
+            <span class="theme-badge pro">Pro</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="themes-note">
+        Pro includes 5 additional premium themes. More added with updates.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Features ── -->
+  <section class="section features-section">
+    <div class="container">
+      <h2 class="section-title">Everything you need, nothing you don't</h2>
+      <ul class="features-list">
+        {freeFeatures.map((f) => (
+          <li>
+            <span class="feature-check" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </span>
+            <span set:html={f} />
+          </li>
+        ))}
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── Pricing ── -->
+  <section class="section pricing-section">
+    <div class="container">
+      <h2 class="section-title">Simple pricing</h2>
+      <p class="section-lead">One product. Two tiers. No subscriptions.</p>
+
+      <div class="pricing-grid">
+        <!-- Free -->
+        <div class="pricing-card">
+          <div class="pricing-header">
+            <h3 class="pricing-tier">Free</h3>
+            <div class="pricing-amount">
+              <span class="price-value">$0</span>
+            </div>
+            <p class="pricing-desc">Open source, MIT licensed.</p>
+          </div>
+          <ul class="pricing-features">
+            <li>Dark Mint theme</li>
+            <li>Auto dark / light mode</li>
+            <li>12 social icons</li>
+            <li>Zero client-side JS</li>
+            <li>All hosting platforms</li>
+          </ul>
+          <a
+            href="https://github.com/buestro/card"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-outline"
+          >
+            Get started free
+          </a>
+        </div>
+
+        <!-- Pro -->
+        <div class="pricing-card pricing-card--pro">
+          <div class="pricing-header">
+            <div class="pricing-tier-row">
+              <h3 class="pricing-tier">Pro</h3>
+              <span class="popular-badge">Most popular</span>
+            </div>
+            <div class="pricing-amount">
+              <span class="price-value">$9</span>
+              <span class="price-note">one-time</span>
+            </div>
+            <p class="pricing-desc">Buy once, own it forever.</p>
+          </div>
+          <ul class="pricing-features">
+            {proFeatures.map((f) => <li>{f}</li>)}
+          </ul>
+          <a
+            href={CHECKOUT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-primary"
+          >
+            Buy Pro — $9
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="section faq-section">
+    <div class="container">
+      <h2 class="section-title">Frequently asked questions</h2>
+      <dl class="faq-list">
+        {faqs.map((item) => (
+          <div class="faq-item">
+            <dt class="faq-question">{item.q}</dt>
+            <dd class="faq-answer">{item.a}</dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <!-- ── Final CTA ── -->
+  <section class="section cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <h2 class="cta-title">Ready to build your card?</h2>
+        <p class="cta-lead">
+          Start free. Upgrade when you need more.
+        </p>
+        <div class="cta-actions">
+          <a
+            href="https://github.com/buestro/card"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-outline-white"
+          >
+            Start free on GitHub
+          </a>
+          <a
+            href={CHECKOUT_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn-cta-pro"
+          >
+            Buy Pro — $9
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ── Footer ── -->
   <footer class="site-footer">
@@ -101,12 +352,81 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 </BaseLayout>
 
 <style>
+  /* ── Shared layout ── */
   .container {
     width: 100%;
-    max-width: 680px;
+    max-width: 900px;
     margin-inline: auto;
     padding-inline: 1.5rem;
   }
+
+  .section {
+    padding-block: 5rem;
+  }
+
+  .section-title {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+  }
+
+  .section-lead {
+    margin: 0 0 2.5rem;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  /* ── Buttons ── */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #fff;
+    background: var(--accent);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: background 0.15s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-primary:hover { background: var(--accent-hover); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: var(--bg-surface);
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: border-color 0.15s;
+  }
+  .btn-secondary:hover { border-color: var(--accent); }
+
+  .btn-outline {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-primary);
+    background: transparent;
+    border: 1px solid var(--border-default);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: border-color 0.15s;
+  }
+  .btn-outline:hover { border-color: var(--accent); }
 
   /* ── Header ── */
   .site-header {
@@ -138,10 +458,25 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     letter-spacing: -0.02em;
   }
 
-  /* ── Content ── */
-  .main {
-    flex: 1;
-    padding-block: 4rem;
+  /* ── Hero ── */
+  .hero-section {
+    padding-block: 5rem 4rem;
+    border-bottom: 1px solid var(--border-default);
+    overflow: hidden;
+  }
+
+  .hero-section .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3rem;
+    align-items: center;
+  }
+
+  @media (min-width: 720px) {
+    .hero-section .container {
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
   }
 
   .badge {
@@ -166,96 +501,261 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     background: var(--accent);
   }
 
-  .page-title {
+  .hero-title {
     margin: 0 0 1rem;
-    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-size: clamp(1.875rem, 5vw, 2.75rem);
     font-weight: 700;
-    letter-spacing: -0.02em;
+    line-height: 1.12;
+    letter-spacing: -0.03em;
     color: var(--text-primary);
   }
 
-  .lead {
+  .break { display: none; }
+  @media (min-width: 540px) { .break { display: block; } }
+
+  .hero-lead {
     margin: 0 0 2rem;
     font-size: 1.0625rem;
     line-height: 1.65;
     color: var(--text-secondary);
   }
 
-  .actions {
+  .hero-actions {
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
-    margin-bottom: 3rem;
   }
 
-  .btn-primary {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.625rem 1.25rem;
-    font-size: 0.9375rem;
-    font-weight: 600;
-    color: #fff;
-    background: var(--accent);
-    border-radius: var(--radius-md);
-    text-decoration: none;
-    transition: background 0.15s;
+  /* Screenshot */
+  .hero-screenshot {
+    display: flex;
+    justify-content: center;
   }
 
-  .btn-primary:hover {
-    background: var(--accent-hover);
-  }
-
-  .btn-secondary {
-    display: inline-flex;
-    align-items: center;
-    padding: 0.625rem 1.25rem;
-    font-size: 0.9375rem;
-    font-weight: 500;
-    color: var(--text-primary);
-    background: var(--bg-surface);
+  .screenshot-frame {
+    position: relative;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
     border: 1px solid var(--border-default);
-    border-radius: var(--radius-md);
-    text-decoration: none;
-    transition: border-color 0.15s;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.08), 0 1px 4px rgba(0,0,0,0.04);
+    width: 100%;
+    max-width: 440px;
   }
 
-  .btn-secondary:hover {
-    border-color: var(--accent);
+  .screenshot-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
   }
 
-  .features {
+  /* ── Themes ── */
+  .themes-section {
+    background: var(--bg-surface);
+    border-block: 1px solid var(--border-default);
+  }
+
+  .themes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.25rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .theme-card {
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-default);
+    background: var(--bg-base);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .theme-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  }
+
+  /* Theme preview mini-card */
+  .theme-preview {
+    position: relative;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    min-height: 160px;
+  }
+
+  .theme-preview.mint {
+    background: #0d1117;
+  }
+  .theme-preview.obsidian {
+    background: #111214;
+  }
+  .theme-preview.aurora {
+    background: #0d0a1a;
+  }
+
+  .preview-bar {
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+  }
+  .mint .preview-bar    { background: #10b981; }
+  .obsidian .preview-bar { background: #6b7280; }
+  .aurora .preview-bar  { background: linear-gradient(90deg, #a855f7, #6366f1); }
+
+  .preview-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    margin-top: 0.25rem;
+  }
+  .mint .preview-avatar     { background: #10b981; opacity: 0.8; }
+  .obsidian .preview-avatar { background: #374151; }
+  .aurora .preview-avatar   { background: linear-gradient(135deg, #a855f7, #6366f1); opacity: 0.9; }
+
+  .preview-name {
+    height: 8px;
+    width: 80px;
+    border-radius: 4px;
+  }
+  .mint .preview-name     { background: #f0fdf4; opacity: 0.9; }
+  .obsidian .preview-name { background: #9ca3af; opacity: 0.8; }
+  .aurora .preview-name   { background: #e9d5ff; opacity: 0.8; }
+
+  .preview-handle {
+    height: 6px;
+    width: 52px;
+    border-radius: 4px;
+  }
+  .mint .preview-handle     { background: #10b981; opacity: 0.6; }
+  .obsidian .preview-handle { background: #6b7280; opacity: 0.6; }
+  .aurora .preview-handle   { background: #a855f7; opacity: 0.6; }
+
+  .preview-tags {
+    display: flex;
+    gap: 0.25rem;
+    margin-top: 0.25rem;
+  }
+  .preview-tags span {
+    height: 16px;
+    width: 36px;
+    border-radius: 9999px;
+  }
+  .mint .preview-tags span     { background: #064e3b; }
+  .obsidian .preview-tags span { background: #1f2937; }
+  .aurora .preview-tags span   { background: #2e1065; }
+
+  .preview-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+    width: 100%;
+    margin-top: 0.25rem;
+  }
+  .preview-links span {
+    height: 20px;
+    border-radius: var(--radius-sm);
+    width: 100%;
+  }
+  .mint .preview-links span     { background: #064e3b; opacity: 0.7; }
+  .obsidian .preview-links span { background: #1f2937; }
+  .aurora .preview-links span   { background: #2e1065; opacity: 0.9; }
+
+  .theme-lock {
+    position: absolute;
+    top: 0.625rem;
+    right: 0.625rem;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .theme-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-top: 1px solid var(--border-default);
+  }
+
+  .theme-name {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .theme-badge {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.1875rem 0.5rem;
+    border-radius: var(--radius-pill);
+  }
+  .theme-badge.free {
+    color: var(--accent-text);
+    background: var(--accent-subtle);
+    border: 1px solid var(--accent-muted);
+  }
+  .theme-badge.pro {
+    color: #92400e;
+    background: #fef3c7;
+    border: 1px solid #fde68a;
+  }
+  @media (prefers-color-scheme: dark) {
+    .theme-badge.pro {
+      color: #fcd34d;
+      background: #451a03;
+      border-color: #78350f;
+    }
+  }
+
+  .themes-note {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-align: center;
+  }
+
+  /* ── Features ── */
+  .features-section {
+    border-bottom: 1px solid var(--border-default);
+  }
+
+  .features-list {
     margin: 0;
     padding: 0;
     list-style: none;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
     gap: 0;
     border-top: 1px solid var(--border-default);
   }
 
-  .features li {
-    padding-block: 0.875rem;
+  @media (min-width: 600px) {
+    .features-list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    padding-block: 1rem;
     font-size: 0.9375rem;
-    line-height: 1.6;
+    line-height: 1.55;
     color: var(--text-secondary);
     border-bottom: 1px solid var(--border-default);
-    padding-left: 1.25rem;
-    position: relative;
   }
 
-  .features li::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 4px;
-    height: 4px;
-    border-radius: 50%;
-    background: var(--accent);
-  }
-
-  .features code {
+  .features-list li code {
     font-family: "JetBrains Mono", monospace;
     font-size: 0.875em;
     background: var(--accent-subtle);
@@ -264,65 +764,135 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     border-radius: 4px;
   }
 
-  /* ── Pro section ── */
-  .pro-section {
-    margin-top: 3rem;
+  .feature-check {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent-subtle);
+    color: var(--accent-text);
+    margin-top: 0.125rem;
+  }
+
+  /* ── Pricing ── */
+  .pricing-section {
+    border-bottom: 1px solid var(--border-default);
+  }
+
+  .pricing-section .section-title,
+  .pricing-section .section-lead {
+    text-align: center;
+  }
+
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    max-width: 680px;
+    margin-inline: auto;
+  }
+
+  @media (min-width: 580px) {
+    .pricing-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .pricing-card {
+    display: flex;
+    flex-direction: column;
     padding: 1.75rem;
     border: 1px solid var(--border-default);
-    border-radius: var(--radius-md);
+    border-radius: var(--radius-lg);
     background: var(--bg-surface);
   }
 
-  .pro-header {
+  .pricing-card--pro {
+    border-color: var(--accent);
+    background: var(--bg-base);
+    box-shadow: 0 0 0 1px var(--accent);
+  }
+
+  .pricing-header {
+    margin-bottom: 1.5rem;
+  }
+
+  .pricing-tier-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0;
+  }
+
+  .pricing-tier {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+
+  .popular-badge {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.1875rem 0.5rem;
+    border-radius: var(--radius-pill);
+    color: var(--accent-text);
+    background: var(--accent-subtle);
+    border: 1px solid var(--accent-muted);
+  }
+
+  .pricing-amount {
     display: flex;
     align-items: baseline;
-    justify-content: space-between;
-    gap: 1rem;
-    margin-bottom: 1.25rem;
+    gap: 0.375rem;
+    margin-top: 0.75rem;
+    margin-bottom: 0.375rem;
   }
 
-  .pro-title {
-    margin: 0;
-    font-size: 1.125rem;
+  .price-value {
+    font-size: 2rem;
     font-weight: 700;
     color: var(--text-primary);
-    letter-spacing: -0.01em;
+    letter-spacing: -0.03em;
   }
 
-  .pro-price {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    white-space: nowrap;
-  }
-
-  .pro-price-note {
-    font-size: 0.8125rem;
-    font-weight: 400;
+  .price-note {
+    font-size: 0.875rem;
     color: var(--text-muted);
   }
 
-  .pro-features {
+  .pricing-desc {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-muted);
+  }
+
+  .pricing-features {
     margin: 0 0 1.5rem;
     padding: 0;
     list-style: none;
+    flex: 1;
     display: flex;
     flex-direction: column;
     gap: 0;
     border-top: 1px solid var(--border-default);
   }
 
-  .pro-features li {
-    padding-block: 0.75rem;
-    font-size: 0.9375rem;
-    line-height: 1.6;
+  .pricing-features li {
+    padding-block: 0.625rem;
+    font-size: 0.875rem;
     color: var(--text-secondary);
     border-bottom: 1px solid var(--border-default);
-    padding-left: 1.25rem;
+    padding-left: 1.125rem;
     position: relative;
   }
 
-  .pro-features li::before {
+  .pricing-features li::before {
     content: "";
     position: absolute;
     left: 0;
@@ -334,22 +904,104 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     background: var(--accent);
   }
 
-  .btn-pro {
+  /* ── FAQ ── */
+  .faq-section {
+    border-bottom: 1px solid var(--border-default);
+  }
+
+  .faq-list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    border-top: 1px solid var(--border-default);
+  }
+
+  .faq-item {
+    padding-block: 1.25rem;
+    border-bottom: 1px solid var(--border-default);
+  }
+
+  .faq-question {
+    margin: 0 0 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--text-primary);
+  }
+
+  .faq-answer {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--text-secondary);
+  }
+
+  /* ── CTA ── */
+  .cta-section {
+    padding-block: 4rem;
+  }
+
+  .cta-box {
+    padding: 3rem 2rem;
+    border-radius: var(--radius-xl);
+    background: var(--accent);
+    text-align: center;
+  }
+
+  .cta-title {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.5rem, 3vw, 1.875rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: #fff;
+  }
+
+  .cta-lead {
+    margin: 0 0 2rem;
+    font-size: 1.0625rem;
+    color: rgba(255,255,255,0.8);
+  }
+
+  .cta-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btn-outline-white {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: #fff;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.5);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: border-color 0.15s, background 0.15s;
+  }
+  .btn-outline-white:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.8);
+  }
+
+  .btn-cta-pro {
     display: inline-flex;
     align-items: center;
     padding: 0.625rem 1.25rem;
     font-size: 0.9375rem;
     font-weight: 600;
-    color: #fff;
-    background: var(--accent);
+    color: var(--accent);
+    background: #fff;
+    border: 1px solid transparent;
     border-radius: var(--radius-md);
     text-decoration: none;
-    transition: background 0.15s;
+    transition: opacity 0.15s;
   }
-
-  .btn-pro:hover {
-    background: var(--accent-hover);
-  }
+  .btn-cta-pro:hover { opacity: 0.9; }
 
   /* ── Footer ── */
   .site-footer {
