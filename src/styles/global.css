@@ -3,8 +3,17 @@
    Token source of truth: /Buestro/brand/buestro-tokens.css
    ───────────────────────────────────────────────────────────── */
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700&family=JetBrains+Mono:wght@400;500&display=swap");
 @import "tailwindcss";
+
+/* Self-hosted Inter (variable, latin). Declared as "Inter" so the existing
+   font-family rules keep working. */
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("@fontsource-variable/inter/files/inter-latin-wght-normal.woff2") format("woff2-variations");
+}
 
 /* ── Design tokens: Light mode ── */
 :root {
