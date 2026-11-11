@@ -1,0 +1,115 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import DiagnosticForm from "../components/DiagnosticForm.astro";
+import { INSTALL_PRICE, MONTHLY_PRICE } from "../config";
+import "../styles/local-business.css";
+---
+<BaseLayout
+  lang="es"
+  title="Agenda y recordatorios para consultorios en Tlajomulco | Buestro"
+  description="Paquete Citas: página web, agenda en línea, recordatorios por WhatsApp y asistente de preguntas frecuentes para consultorios, dentistas, psicólogos y fisioterapeutas del sur de la ZMG."
+>
+  <Header />
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="badge">Paquete Citas · consultorios y servicios</p>
+        <h1>Menos citas perdidas. Menos tiempo en WhatsApp.</h1>
+        <p class="lead">Una página, una agenda en línea y recordatorios automáticos para tu consultorio, instalados y funcionando en 7 a 10 días hábiles. Precio fijo.</p>
+        <div class="actions">
+          <a class="btn" href="#diagnostic">Pedir diagnóstico gratis</a>
+          <a class="btn btn-soft" href="#price">Ver precio</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <h2>El problema</h2>
+        <ul class="checklist">
+          <li>Contestas todo el día lo mismo: horarios, precios y cómo llegar.</li>
+          <li>Pacientes que olvidan su cita y dejan la hora vacía.</li>
+          <li>La agenda vive en una libreta o en un chat.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>La solución</h2>
+        <div class="grid">
+          <div class="card"><h3>Página web</h3><p>Servicios, ubicación y horarios, con botón directo a tu WhatsApp. Con tu propio dominio.</p></div>
+          <div class="card"><h3>Agenda en línea</h3><p>Tus pacientes reservan solos. Tú ves y administras tus citas.</p></div>
+          <div class="card"><h3>Recordatorios</h3><p>Aviso automático por WhatsApp antes de cada cita.</p></div>
+          <div class="card"><h3>Asistente de preguntas frecuentes</h3><p>Responde horarios, precios y cómo agendar.</p></div>
+          <div class="card"><h3>Perfil de Google</h3><p>Tu ficha de Google Maps optimizada para que te encuentren.</p></div>
+          <div class="card"><h3>Aviso de privacidad</h3><p>Redactado para tu consultorio, conforme a la ley.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container two-col">
+        <div>
+          <h2>Qué incluye</h2>
+          <ul class="checklist">
+            <li>Página, agenda, recordatorios y asistente configurados</li>
+            <li>Sesión de capacitación de 1 hora</li>
+            <li>Hosting, mantenimiento y soporte por WhatsApp (en horario hábil)</li>
+            <li>Hasta 1 hora de ajustes al mes</li>
+            <li>Dominio y contenido a tu nombre</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Qué no incluye</h2>
+          <ul class="checklist no">
+            <li>Expedientes clínicos ni datos de salud en el sistema</li>
+            <li>Cobros en línea, facturación o inventario</li>
+            <li>Logotipo, fotografía o textos extensos</li>
+            <li>Campañas de publicidad</li>
+            <li>Varias sucursales o varios profesionales en una agenda (se cotiza aparte)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="price">
+      <div class="container narrow">
+        <h2>Precio</h2>
+        <div class="price">
+          <span><span class="amount">{INSTALL_PRICE}</span><span class="caption">instalación, pago único</span></span>
+          <span><span class="amount">{MONTHLY_PRICE}</span><span class="caption">al mes</span></span>
+        </div>
+        <ul class="checklist">
+          <li>Precios más IVA (se desglosa en tu factura).</li>
+          <li>Instalación: 50% para iniciar y 50% al entregar.</li>
+          <li>Aparte y a costo: la mensajería de WhatsApp (los primeros 1,000 mensajes de servicio al mes son gratis) y tu dominio.</li>
+          <li>Cancelas con 30 días de aviso, sin penalización.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container narrow">
+        <h2>Tu privacidad y la de tus pacientes</h2>
+        <p class="lead">El asistente responde solo con la información pública de tu consultorio. <strong>Nunca procesa expedientes, datos de salud ni de menores.</strong> Eso queda por escrito en el contrato.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <h2>Preguntas frecuentes</h2>
+        <details><summary>¿Necesito saber de tecnología?</summary><p>No. Tú nos das la información de tu consultorio y nosotros lo configuramos todo. Al final te enseñamos a usar la agenda en una sesión.</p></details>
+        <details><summary>¿Cuánto tarda?</summary><p>De 7 a 10 días hábiles desde el anticipo y la información de tu negocio.</p></details>
+        <details><summary>¿El dominio es mío?</summary><p>Sí. Siempre queda a tu nombre; si un día cancelas, te lo llevas.</p></details>
+        <details><summary>¿Por qué hay mensualidad?</summary><p>Cubre el hosting, el mantenimiento y el soporte. Sin eso el sistema se queda sin quien lo atienda.</p></details>
+        <details><summary>¿Y si ya tengo página?</summary><p>Lo vemos en el diagnóstico. Puede que solo necesites la agenda y los recordatorios.</p></details>
+      </div>
+    </section>
+
+    <DiagnosticForm businessType="Consultorio" />
+  </main>
+  <Footer />
+</BaseLayout>
