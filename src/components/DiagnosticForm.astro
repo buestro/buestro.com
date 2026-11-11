@@ -1,0 +1,44 @@
+---
+import { EMAIL, WHATSAPP } from "../config";
+interface Props { businessType?: string }
+const { businessType = "" } = Astro.props;
+---
+<section class="section section-soft" id="diagnostic">
+  <div class="container narrow">
+    <h2>Diagnóstico gratuito de 30 minutos</h2>
+    <p class="lead">Cuéntanos cómo agendas hoy. Te decimos qué conviene automatizar y cuánto costaría, sin compromiso.</p>
+    <form class="form" id="diagnostic-form" data-whatsapp={WHATSAPP} data-email={EMAIL}>
+      <label>Tu nombre
+        <input name="name" required autocomplete="name" />
+      </label>
+      <label>Nombre de tu negocio
+        <input name="business" required autocomplete="organization" />
+      </label>
+      <label>¿A qué se dedica?
+        <input name="type" value={businessType} placeholder="Ej. consultorio dental, psicología, estética" required />
+      </label>
+      <label>¿Cómo agendas tus citas hoy? <span class="optional">(opcional)</span>
+        <input name="scheduling" placeholder="Ej. por WhatsApp, en libreta" />
+      </label>
+      <button type="submit" class="btn">Enviar por WhatsApp</button>
+      <p class="note">No guardamos esta información en el sitio: al enviar se abre tu WhatsApp (o tu correo) con el mensaje ya escrito. <strong>No escribas datos de pacientes ni de salud.</strong></p>
+    </form>
+  </div>
+</section>
+
+<script>
+  const f = document.getElementById("diagnostic-form") as HTMLFormElement | null;
+  f?.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const d = new FormData(f);
+    const texto =
+      `Hola, quiero un diagnóstico gratuito.\n` +
+      `Nombre: ${d.get("name")}\nNegocio: ${d.get("business")}\nGiro: ${d.get("type")}` +
+      (d.get("scheduling") ? `\nAgenda hoy: ${d.get("scheduling")}` : "");
+    const t = encodeURIComponent(texto);
+    const wa = f.dataset.whatsapp;
+    window.location.href = wa
+      ? `https://wa.me/${wa}?text=${t}`
+      : `mailto:${f.dataset.email}?subject=${encodeURIComponent("Diagnóstico gratuito")}&body=${t}`;
+  });
+</script>

@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import DiagnosticForm from "../components/DiagnosticForm.astro";
+import { INSTALL_PRICE, MONTHLY_PRICE } from "../config";
+import "../styles/local-business.css";
+
+---
+<BaseLayout
+  lang="es"
+  title="Buestro: tu negocio atiende WhatsApp y agenda citas solo"
+  description="Página web, agenda en línea y recordatorios por WhatsApp para consultorios y negocios de Tlajomulco y el sur de Guadalajara. Precio fijo, todo instalado."
+>
+  <Header />
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="badge">Para negocios del sur de Guadalajara</p>
+        <h1>Tu negocio atiende WhatsApp y agenda citas solo.</h1>
+        <p class="lead">Tú te dedicas a tu oficio. Nosotros instalamos tu página, tu agenda y los recordatorios, y nos encargamos de que funcionen cada mes.</p>
+        <div class="actions">
+          <a class="btn" href="#diagnostic">Pedir diagnóstico gratis</a>
+          <a class="btn btn-soft" href="/consultorios">Ver el paquete para consultorios</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container">
+        <h2>¿Te suena familiar?</h2>
+        <div class="grid">
+          <div class="card"><h3>Mismas preguntas, todos los días</h3><p>Horarios, precios, ubicación. Contestas lo mismo veinte veces por WhatsApp.</p></div>
+          <div class="card"><h3>Citas que se olvidan</h3><p>El cliente no llega y la hora se pierde, sin aviso y sin que puedas reponerla.</p></div>
+          <div class="card"><h3>Agenda en libreta o en el chat</h3><p>Todo depende de que recuerdes revisar mensajes viejos.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <h2>Lo que instalamos</h2>
+        <div class="grid">
+          <div class="card"><h3>Página web propia</h3><p>Rápida, con tus servicios, ubicación y un botón directo a tu WhatsApp. Con tu dominio.</p></div>
+          <div class="card"><h3>Agenda en línea</h3><p>Tus clientes reservan solos y tú ves y administras tus citas.</p></div>
+          <div class="card"><h3>Recordatorios por WhatsApp</h3><p>Aviso automático antes de cada cita para que lleguen.</p></div>
+          <div class="card"><h3>Asistente de preguntas frecuentes</h3><p>Responde horarios, precios y cómo agendar, solo con la información pública de tu negocio.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container two-col">
+        <div>
+          <h2>Cómo trabajamos</h2>
+          <ol class="steps">
+            <li><strong>Diagnóstico gratis (30 min)</strong>Vemos cómo agendas hoy.</li>
+            <li><strong>Instalación en 7 a 10 días hábiles</strong>Tú nos das la información; nosotros lo dejamos funcionando.</li>
+            <li><strong>Entrega y capacitación</strong>Una sesión de 1 hora para que uses tu agenda.</li>
+            <li><strong>Soporte mensual</strong>Hosting, mantenimiento y ajustes menores.</li>
+          </ol>
+        </div>
+        <div>
+          <h2>Precio claro</h2>
+          <div class="price">
+            <span><span class="amount">desde {INSTALL_PRICE}</span><span class="caption">instalación, pago único</span></span>
+            <span><span class="amount">{MONTHLY_PRICE}</span><span class="caption">al mes</span></span>
+          </div>
+          <p class="small">Más IVA. Sin sorpresas: si tu caso es distinto, te lo decimos en el diagnóstico, antes de pagar nada.</p>
+          <a class="btn btn-soft" href="/consultorios">Ver qué incluye</a>
+        </div>
+      </div>
+    </section>
+
+    <DiagnosticForm />
+  </main>
+  <Footer />
+</BaseLayout>

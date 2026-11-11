@@ -1,0 +1,70 @@
+/* Pages for local businesses (/ and /consultorios). Uses the tokens from global.css. */
+.container { width: min(1080px, 100% - 2.5rem); margin-inline: auto; }
+.narrow { max-width: 640px; }
+a { color: var(--accent-text); }
+h1, h2, h3 { line-height: 1.15; letter-spacing: -0.02em; margin: 0; }
+h1 { font-size: clamp(2rem, 5.5vw, 3.25rem); font-weight: 700; }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.1rem); font-weight: 650; margin-bottom: 0.75rem; }
+h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.35rem; }
+p { margin: 0 0 1rem; }
+.lead { font-size: 1.125rem; color: var(--text-secondary); max-width: 40rem; }
+.small { font-size: 0.875rem; color: var(--text-muted); }
+
+.site-header { border-bottom: 1px solid var(--border-default); background: var(--bg-base); position: sticky; top: 0; z-index: 10; }
+.header-row { display: flex; align-items: center; justify-content: space-between; height: 3.75rem; }
+.header-nav { display: flex; align-items: center; gap: 1.25rem; }
+.header-nav a:not(.btn) { color: var(--text-secondary); text-decoration: none; font-weight: 500; }
+.wordmark { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 1.15rem; color: var(--text-primary); text-decoration: none; }
+.wordmark-bar { width: 4px; height: 1.2em; background: var(--accent); border-radius: 2px; }
+
+.btn { display: inline-block; background: var(--accent); color: #fff; border: 0; border-radius: var(--radius-pill);
+  padding: 0.8rem 1.5rem; font: inherit; font-weight: 600; text-decoration: none; cursor: pointer; }
+.btn:hover { background: var(--accent-hover); }
+.btn-small { padding: 0.45rem 1rem; font-size: 0.9rem; }
+.btn-soft { background: var(--accent-subtle); color: var(--accent-text); }
+.btn-soft:hover { background: var(--accent-muted); }
+@media (prefers-color-scheme: dark) { .btn { color: #05080f; } .btn-soft { color: var(--accent-text); } }
+.actions { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
+
+.hero { padding: clamp(3rem, 9vw, 6rem) 0 clamp(2.5rem, 6vw, 4rem); }
+.badge { display: inline-block; background: var(--accent-subtle); color: var(--accent-text); font-size: 0.8rem; font-weight: 600;
+  border-radius: var(--radius-pill); padding: 0.25rem 0.8rem; margin-bottom: 1.25rem; }
+.hero h1 { max-width: 18ch; margin-bottom: 1.25rem; }
+
+.section { padding: clamp(2.5rem, 7vw, 4.5rem) 0; }
+.section-soft { background: var(--bg-surface); border-block: 1px solid var(--border-default); }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.card { background: var(--bg-surface); border: 1px solid var(--border-default); border-radius: var(--radius-lg); padding: 1.25rem; }
+.section-soft .card { background: var(--bg-base); }
+.card p { color: var(--text-secondary); margin: 0; font-size: 0.95rem; }
+
+.checklist { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: 0.6rem; }
+.checklist li { padding-left: 1.6rem; position: relative; color: var(--text-secondary); }
+.checklist li::before { content: "✓"; position: absolute; left: 0; color: var(--accent-text); font-weight: 700; }
+.checklist.no li::before { content: "✕"; color: var(--text-muted); }
+.two-col { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+
+.steps { counter-reset: paso; list-style: none; padding: 0; margin: 1.5rem 0 0; display: grid; gap: 1rem; }
+.steps li { counter-increment: paso; padding-left: 3rem; position: relative; color: var(--text-secondary); }
+.steps li::before { content: counter(paso); position: absolute; left: 0; top: 0; width: 2rem; height: 2rem; border-radius: 50%;
+  background: var(--accent-subtle); color: var(--accent-text); font-weight: 700; display: grid; place-items: center; }
+.steps strong { color: var(--text-primary); display: block; }
+
+.price { display: flex; flex-wrap: wrap; gap: 2rem; align-items: baseline; margin: 1rem 0; }
+.price .amount { font-size: clamp(2rem, 6vw, 2.75rem); font-weight: 700; letter-spacing: -0.02em; display: block; line-height: 1.1; }
+.price .caption { color: var(--text-muted); font-size: 0.9rem; }
+
+details { border-bottom: 1px solid var(--border-default); padding: 0.9rem 0; }
+summary { cursor: pointer; font-weight: 600; }
+details p { margin: 0.6rem 0 0; color: var(--text-secondary); }
+
+.form { display: grid; gap: 1rem; margin-top: 1.5rem; }
+.form label { display: grid; gap: 0.35rem; font-weight: 500; font-size: 0.95rem; }
+.form input { font: inherit; padding: 0.7rem 0.85rem; border: 1px solid var(--border-strong); border-radius: var(--radius-md);
+  background: var(--bg-base); color: var(--text-primary); }
+.optional { color: var(--text-muted); font-weight: 400; }
+.note { font-size: 0.85rem; color: var(--text-muted); margin: 0; }
+
+.site-footer { border-top: 1px solid var(--border-default); padding: 2rem 0; font-size: 0.9rem; color: var(--text-muted); }
+.footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 0.5rem 2rem; }
+.site-footer p { margin: 0; }
