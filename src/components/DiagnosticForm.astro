@@ -2,6 +2,7 @@
 import { EMAIL, WHATSAPP } from "../config";
 interface Props { businessType?: string }
 const { businessType = "" } = Astro.props;
+import PrivacyNotice from "./PrivacyNotice.astro";
 ---
 <section class="section section-soft" id="diagnostic">
   <div class="container narrow">
@@ -20,6 +21,7 @@ const { businessType = "" } = Astro.props;
       <label>¿Cómo agendas tus citas hoy? <span class="optional">(opcional)</span>
         <input name="scheduling" placeholder="Ej. por WhatsApp, en libreta" />
       </label>
+      <PrivacyNotice purpose="diagnostic" />
       <button type="submit" class="btn">Enviar por WhatsApp</button>
       <p class="note">No guardamos esta información en el sitio: al enviar se abre tu WhatsApp (o tu correo) con el mensaje ya escrito. <strong>No escribas datos de pacientes ni de salud.</strong></p>
     </form>

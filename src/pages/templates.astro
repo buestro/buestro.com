@@ -1,5 +1,6 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import PrivacyNotice from "../components/PrivacyNotice.astro";
 ---
 
 <BaseLayout>
@@ -58,6 +59,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       </form>
 
       <p class="privacy-note">No spam. Unsubscribe at any time.</p>
+      <PrivacyNotice purpose="newsletter" />
 
       <!-- Products preview -->
       <div class="products-row">
