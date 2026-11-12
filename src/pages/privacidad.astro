@@ -1,0 +1,144 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { LEGAL_NAME, ADDRESS, EMAIL } from "../config";
+import "../styles/local-business.css";
+
+const lastUpdated = "12 de noviembre de 2026";
+---
+<BaseLayout
+  lang="es"
+  title="Aviso de privacidad | Buestro"
+  description="Aviso de privacidad integral de Buestro: qué datos personales recabamos, para qué los usamos y cómo ejercer tus derechos ARCO."
+>
+  <Header />
+  <main>
+    <section class="section">
+      <div class="container narrow legal">
+        <p class="note">Última actualización: {lastUpdated}</p>
+        <h1>Aviso de privacidad integral</h1>
+
+        <h2>1. ¿Quién es el responsable de tus datos?</h2>
+        <p>
+          <strong>{LEGAL_NAME}</strong>, persona física con actividad empresarial, que opera bajo el nombre comercial
+          <strong>Buestro</strong>, con domicilio para oír y recibir notificaciones en {ADDRESS}.
+        </p>
+        <p>Contacto en materia de privacidad: <a href={`mailto:${EMAIL}`}>{EMAIL}</a></p>
+
+        <h2>2. ¿Qué datos personales recabamos?</h2>
+        <p>Recabamos solo los datos que tú nos das directamente, ya sea por el formulario del sitio, por WhatsApp, por correo, por teléfono o en persona:</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Categoría</th><th>Datos</th><th>Cuándo</th></tr></thead>
+            <tbody>
+              <tr><td>Identificación y contacto</td><td>Nombre, teléfono o WhatsApp, correo electrónico</td><td>Al pedir un diagnóstico, escribirnos o contratar</td></tr>
+              <tr><td>Datos del negocio</td><td>Nombre del negocio, giro, domicilio, cómo agendas hoy</td><td>Diagnóstico y prestación del servicio</td></tr>
+              <tr><td>Datos fiscales</td><td>RFC, razón social, domicilio fiscal, régimen fiscal, correo para CFDI</td><td>Solo si contratas, para facturarte</td></tr>
+              <tr><td>Navegación</td><td>Páginas vistas, país, tipo de dispositivo y navegador, de forma agregada y anónima</td><td>Al visitar buestro.com</td></tr>
+              <tr><td>Correo para novedades</td><td>Correo electrónico</td><td>Solo si te suscribes a la lista de espera de plantillas</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3>Datos que NO recabamos</h3>
+        <p>
+          <strong>No recabamos datos personales sensibles</strong> (salud, origen étnico, creencias, datos biométricos, entre otros)
+          <strong>ni datos de menores de edad.</strong> Te pedimos no escribirlos en el formulario ni en los mensajes que nos envíes.
+        </p>
+        <p>
+          Los sistemas que instalamos a nuestros clientes (agenda, recordatorios y asistente)
+          <strong>no están diseñados para procesar expedientes clínicos ni datos de salud</strong>, y el asistente responde únicamente
+          con información pública del negocio. Si eres cliente y tus propios pacientes o clientes te dan datos personales, tú eres el
+          responsable de esos datos y debes contar con tu propio aviso de privacidad (te entregamos una plantilla como parte del servicio).
+        </p>
+
+        <h2>3. ¿Para qué usamos tus datos?</h2>
+        <p><strong>Finalidades necesarias</strong> (sin ellas no podemos atenderte):</p>
+        <ol>
+          <li>Responder tu solicitud de diagnóstico, cotización o información.</li>
+          <li>Agendar y realizar el diagnóstico gratuito.</li>
+          <li>Elaborar y ejecutar el contrato de servicio, incluida la instalación y el soporte.</li>
+          <li>Facturar y cumplir obligaciones fiscales y legales.</li>
+        </ol>
+        <p><strong>Finalidades secundarias</strong> (puedes negarte sin que afecte el servicio):</p>
+        <ol start="5">
+          <li>Enviarte novedades, plantillas o promociones de Buestro.</li>
+          <li>Mejorar el sitio con estadísticas agregadas de visitas.</li>
+        </ol>
+        <p>
+          Si no quieres que tus datos se usen para las finalidades 5 y 6, escríbenos a <a href={`mailto:${EMAIL}?subject=Finalidades%20secundarias`}>{EMAIL}</a>
+          con el asunto "Finalidades secundarias". Puedes hacerlo en cualquier momento, también después de darnos tus datos.
+        </p>
+
+        <h2>4. ¿Con quién compartimos tus datos?</h2>
+        <p>
+          <strong>No vendemos ni cedemos tus datos.</strong> Para operar usamos proveedores que los tratan por nuestra cuenta,
+          sin finalidades propias, y que pueden estar fuera de México:
+        </p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Proveedor</th><th>Para qué</th></tr></thead>
+            <tbody>
+              <tr><td>Meta (WhatsApp)</td><td>Mensajes que tú nos envías o que enviamos por el servicio</td></tr>
+              <tr><td>Microsoft (Outlook)</td><td>Correo electrónico</td></tr>
+              <tr><td>Vercel</td><td>Alojamiento del sitio</td></tr>
+              <tr><td>Plausible Analytics</td><td>Estadísticas de visitas sin cookies ni identificación personal</td></tr>
+              <tr><td>Kit (antes ConvertKit)</td><td>Lista de correo de plantillas, solo si te suscribes</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p>Podemos entregar datos a autoridades cuando una ley o una orden las obligue.</p>
+
+        <h2>5. Cookies y tecnologías de rastreo</h2>
+        <p>buestro.com usa Plausible Analytics, que <strong>no usa cookies ni guarda datos personales</strong> y solo genera estadísticas agregadas.</p>
+
+        <h2>6. Tus derechos ARCO</h2>
+        <p>
+          Tienes derecho a <strong>Acceder</strong> a tus datos, <strong>Rectificarlos</strong>, <strong>Cancelarlos</strong> u
+          <strong>Oponerte</strong> a su uso, así como a revocar tu consentimiento y limitar el uso o la divulgación de tus datos.
+        </p>
+        <p>Para ejercerlos, envía un correo a <a href={`mailto:${EMAIL}`}>{EMAIL}</a> con:</p>
+        <ol>
+          <li>Tu nombre y un medio para responderte.</li>
+          <li>Copia de una identificación oficial.</li>
+          <li>Descripción clara del derecho que quieres ejercer y de los datos involucrados.</li>
+          <li>Si es posible, cualquier dato que ayude a localizar tu información.</li>
+        </ol>
+        <p>
+          Responderemos en un máximo de <strong>20 días hábiles</strong> desde que recibamos tu solicitud y, si procede, la haremos efectiva
+          en los <strong>15 días hábiles</strong> siguientes a nuestra respuesta. Estos plazos pueden ampliarse una sola vez por un periodo
+          igual si el caso lo justifica. El ejercicio de los derechos ARCO es gratuito; solo podríamos cobrarte los costos de reproducción o envío.
+          Si necesitas conservar el servicio, ciertos datos (como los fiscales) deberán guardarse el tiempo que la ley exija.
+        </p>
+
+        <h2>7. Cambios a este aviso</h2>
+        <p>
+          Publicaremos cualquier cambio en esta misma página, con su nueva fecha de actualización. Si el cambio afecta las finalidades,
+          te avisaremos por correo o WhatsApp.
+        </p>
+
+        <h2>8. Autoridad</h2>
+        <p>
+          Si crees que tus derechos fueron vulnerados, puedes presentar una solicitud de protección de datos ante la
+          <strong>Secretaría Anticorrupción y Buen Gobierno</strong>, dentro de los 15 días siguientes a la respuesta que te demos
+          (o a que venza el plazo para responderte).
+        </p>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
+
+<style>
+  .legal h1 { margin: 0.25rem 0 1.5rem; }
+  .legal h2 { margin: 2.25rem 0 0.75rem; font-size: clamp(1.25rem, 3vw, 1.6rem); }
+  .legal h3 { margin: 1.5rem 0 0.5rem; font-size: 1.1rem; }
+  .legal p, .legal li { line-height: 1.65; }
+  .legal ol { padding-left: 1.25rem; }
+  .legal a { text-decoration: underline; }
+  .table-wrap { overflow-x: auto; margin: 1rem 0; }
+  .legal table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .legal th, .legal td { text-align: left; vertical-align: top; padding: 0.6rem 0.75rem; border-bottom: 1px solid var(--border-default); }
+  .legal th { font-weight: 600; }
+</style>

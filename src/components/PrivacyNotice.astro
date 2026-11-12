@@ -1,0 +1,31 @@
+---
+// Simplified privacy notice (LFPDPPP art. 16, fr. II): shown next to every form
+// that collects personal data. The full notice lives at /privacidad.
+import { LEGAL_NAME, ADDRESS, EMAIL } from "../config";
+
+interface Props { purpose: "diagnostic" | "newsletter" }
+const { purpose } = Astro.props;
+
+const data = purpose === "diagnostic"
+  ? "tu nombre, el nombre y giro de tu negocio y cómo agendas hoy"
+  : "tu correo electrónico";
+const goal = purpose === "diagnostic"
+  ? "responder tu solicitud y agendar tu diagnóstico gratuito"
+  : "avisarte cuando haya novedades o plantillas (finalidad secundaria)";
+---
+<details class="privacy-simplified">
+  <summary>Aviso de privacidad simplificado</summary>
+  <p>
+    <strong>{LEGAL_NAME}</strong> (Buestro), con domicilio en {ADDRESS}, trata {data} para {goal}.
+    No recabamos datos sensibles ni de menores. Para limitar el uso de tus datos escríbenos a
+    <a href={`mailto:${EMAIL}`}>{EMAIL}</a>. Conoce el
+    <a href="/privacidad">aviso de privacidad integral</a> y cómo ejercer tus derechos ARCO.
+  </p>
+</details>
+
+<style>
+  .privacy-simplified { font-size: 0.8125rem; color: var(--text-muted); margin: 0.5rem 0; }
+  .privacy-simplified summary { cursor: pointer; }
+  .privacy-simplified p { margin: 0.5rem 0 0; line-height: 1.5; }
+  .privacy-simplified a { text-decoration: underline; }
+</style>
