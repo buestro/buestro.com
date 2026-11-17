@@ -13,6 +13,9 @@ export const ADDRESS = "Gardenia 14, San Sebastián, Tlajomulco de Zúñiga, Jal
 export const INSTALL_PRICE = "$5,500";
 export const MONTHLY_PRICE = "$750";
 
+// Public demo of the "Citas" package (fictional dental office), repo buestro/demo-citas.
+export const DEMO_CITAS_URL = "https://demo-citas-three.vercel.app";
+
 export function contactLink(message: string): string {
   const text = encodeURIComponent(message);
   return WHATSAPP

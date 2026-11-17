@@ -3,7 +3,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import DiagnosticForm from "../components/DiagnosticForm.astro";
-import { INSTALL_PRICE, MONTHLY_PRICE } from "../config";
+import { DEMO_CITAS_URL, INSTALL_PRICE, MONTHLY_PRICE } from "../config";
 import "../styles/local-business.css";
 ---
 <BaseLayout
@@ -20,6 +20,7 @@ import "../styles/local-business.css";
         <p class="lead">Una página, una agenda en línea y recordatorios automáticos para tu consultorio, instalados y funcionando en 7 a 10 días hábiles. Precio fijo.</p>
         <div class="actions">
           <a class="btn" href="#diagnostic">Pedir diagnóstico gratis</a>
+          <a class="btn btn-soft" href={DEMO_CITAS_URL} target="_blank" rel="noopener">Ver demo en vivo</a>
           <a class="btn btn-soft" href="#price">Ver precio</a>
         </div>
       </div>
@@ -47,6 +48,17 @@ import "../styles/local-business.css";
           <div class="card"><h3>Perfil de Google</h3><p>Tu ficha de Google Maps optimizada para que te encuentren.</p></div>
           <div class="card"><h3>Aviso de privacidad</h3><p>Redactado para tu consultorio, conforme a la ley.</p></div>
         </div>
+      </div>
+    </section>
+
+    <section class="section" id="demo">
+      <div class="container narrow">
+        <h2>Pruébalo tú mismo</h2>
+        <p class="lead">Armamos la demo de un consultorio dental ficticio para que veas cómo se vería el tuyo: reserva una cita desde tu celular y pregúntale algo al asistente.</p>
+        <div class="actions">
+          <a class="btn" href={DEMO_CITAS_URL} target="_blank" rel="noopener">Abrir la demo</a>
+        </div>
+        <p class="small">Es una demo con datos ficticios: usa un nombre y un teléfono de ejemplo. Si tarda unos segundos en cargar la primera vez, es normal.</p>
       </div>
     </section>
 
